@@ -1,0 +1,24 @@
+numbers = []
+odd_count = 0
+
+while True:
+    num = float(input("Введите число (для окончания введите 0): "))
+    if num == 0:
+        break
+    numbers.append(num)
+    if num % 2 != 0:
+        odd_count += 1
+
+count = len(numbers)
+if count > 0:
+    min_number = min(numbers)
+    min_index = numbers.index(min_number) + 1
+
+    ranges = max(numbers) - min(numbers)
+
+    print("Количество чисел:", count)
+    print("Количество нечетных чисел:", odd_count)
+    print("Диапазон изменения чисел:", ranges)
+    print("Порядковый номер наименьшего числа:", min_index)
+else:
+    print("Последовательность пустая.")
