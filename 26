@@ -1,0 +1,22 @@
+def generate_sequences(a, b, s, n):
+    x = [a]
+    y = [b]
+    
+    for i in range(2, n+1):
+        x_k = 0.5 * (x[i-2] + y[i-2])
+        y_k = 0.5 * (x_k + y[i-2])
+        
+        x.append(x_k)
+        y.append(y_k)
+    
+    return x, y
+
+a = 10  # Значение a
+b = 7   # Значение b
+s = 5   # Значение s
+n = 10  # Количество элементов для генерации
+
+x_sequence, y_sequence = generate_sequences(a, b, s, n)
+
+print("Последовательность x_k:", x_sequence)
+print("Последовательность y_k:", y_sequence)
