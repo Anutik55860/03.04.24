@@ -1,0 +1,18 @@
+def sum_of_squares(numbers):
+    sum_squares = 0
+    for num in numbers:
+        if num == -100:
+            break
+        if num <= 2:
+            sum_squares += num**2
+    return sum_squares
+
+numbers = []
+while True:
+    num = float(input("Введите число (для окончания введите -100): "))
+    if num == -100:
+        break
+    numbers.append(num)
+
+result = sum_of_squares(numbers)
+print("Сумма квадратов чисел, не превосходящих 2:", result)
